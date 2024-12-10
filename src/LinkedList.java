@@ -1,12 +1,13 @@
 public class LinkedList {
-    public Node head;
+    Node head;
 
-    // Method to display the linked list
-    public void display() {
-        if (head == null) {
-            System.out.println("Linked List is empty");
-            return;
-        }
+    public void add(int value) {
+        Node newNode = new Node(value);
+        newNode.next = head;
+        head = newNode;
+    }
+
+    public void printList() {
         Node temp = head;
         while (temp != null) {
             System.out.print(temp.data + " -> ");
